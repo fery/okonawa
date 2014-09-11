@@ -11,4 +11,9 @@ class Todo
                          :formotion => {:type => :switch }}
 
   validates :name, :presence => true
+
+
+  def overdue?
+    due_date <= NSDate.new
+  end
 end
