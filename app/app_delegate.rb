@@ -1,5 +1,5 @@
 class AppDelegate
-  def application(application, didFinishLaunchingWithOptions:launchOptions)
+  def application(application, didFinishLaunchingWithOptions: launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
 
     @todos_controller = TodosController.alloc.initWithNibName(nil, bundle: nil)
