@@ -10,7 +10,7 @@ class TodosController < UIViewController
 
     self.view.addSubview(@table)
 
-    @data = %w(Something anotherThing lastThing).map { |t| "Buy #{t}"}
+    @data = Todo.all
   end
 
   def tableView(tableView, numberOfRowsInSection: section)
@@ -21,7 +21,7 @@ class TodosController < UIViewController
     cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, 
                                                 reuseIdentifier: nil)
 
-    cell.textLabel.text = @data[indexPath.row]
+    cell.textLabel.text = @data[indexPath.row].name
     cell    
   end
 end

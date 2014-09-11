@@ -2,6 +2,13 @@ describe 'Todos Controller ' do
   tests TodosController
 
   before do
+    Todo.delete_all
+    @now = NSDate.new
+
+    @todo = Todo.create :name        => 'A name',
+                        :description => 'A description',
+                        :due_date    => @now
+
     @table = controller.instance_variable_get('@table')
   end
 
@@ -15,6 +22,6 @@ describe 'Todos Controller ' do
 
   it 'should display Something as the first item to buy' do
     cell = @table.visibleCells.first
-    cell.textLabel.text.should == 'Buy Something'
+    cell.textLabel.text.should == 'A name'
   end
 end
