@@ -9,7 +9,7 @@ describe 'Todos Controller ' do
                         :description => 'A description',
                         :due_date    => @now
 
-    @table = controller.instance_variable_get('@table')
+    @table = controller.tableView
   end
 
   it 'should exist' do 
